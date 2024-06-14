@@ -1,44 +1,28 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { setStatusBarBackgroundColor } from 'expo-status-bar'
 
-const App =() => {
+const App = () => {
   return (
     <View style={{
-      flex: 1,
-    }}>
-
-<View style={{
-  flex: 1,
-  flexDirection:'row'
-}}>
-          <View style={{
-          flex: 1, 
-          backgroundColor: 'white',
-          }}>
-        </View>
-        <View style={{
-          flex: 1,
-          backgroundColor: 'purple',
-          }}>
-    </View>
-    </View>
+      flex: 1, 
+      }}>
       <View style={{
-        flex: 1,
-        backgroundColor: 'pink',
-        }}> 
-        </View>
-
+        flex:1,justifyContent: 'flex-start', alignItems: 'flex-start',
+      }}>
       <View style={{
-        flex: 1,
-        backgroundColor: 'blue',
-        }}></View>
-      
-
+        width: 100, height: 100, backgroundColor: 'red',
+      }}>
+      </View>  
+      </View>
+      <View style={{
+        flex: 1, justifyContent: 'flex-end', alignItems: 'flex-end',
+      }}>
+      <View style={{
+        width: 100, height: 100, backgroundColor: 'blue',
+      }}>
+      </View>
+      </View>
     </View>
-
-    
   )
 }
-
 export default App
