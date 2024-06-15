@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
           width: 140,
           height: 80,
           backgroundColor: 'red',
-          borderRadius: 10,
+          borderRadius: 15,
           marginRight: 10,
           justifyContent: 'center',
           alignItems: 'center',
@@ -23,7 +23,7 @@ const App = () => {
           width: 140,
           height: 80,
           backgroundColor: 'blue',
-          borderRadius: 10,
+          borderRadius: 15,
           marginLeft: 10,
           justifyContent: 'center',
           alignItems: 'center',
