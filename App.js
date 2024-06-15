@@ -1,31 +1,38 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { View, Text } from 'react-native'
 
 const App = () => {
   return (
-    <View style={{
-      flex: 1,
-      marginTop:300, 
-      }}>
-      <View style={{
-        //flex:1,
-        justifyContent: 'center', alignItems: 'center',
-      }}>
-      <View style={{
-        width: 100, height: 100, backgroundColor: 'red',
-      }}>
-      </View>  
+    <View style={{ flex: 1, flexDirection: 'row' }}>
+      <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center' }}>
+        <View style={{
+          width: 140,
+          height: 80,
+          backgroundColor: 'red',
+          borderRadius: 10,
+          marginRight: 10,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <Text style={{ color: 'white', fontSize: 25 }}>SIGN IN</Text>
+        </View>
       </View>
-      <View style={{
-        //flex: 1, 
-        justifyContent: 'center', alignItems: 'center',
-      }}>
-      <View style={{
-        width: 100, height: 100, backgroundColor: 'blue',
-      }}>
-      </View>
+
+      <View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'center' }}>
+        <View style={{
+          width: 140,
+          height: 80,
+          backgroundColor: 'blue',
+          borderRadius: 10,
+          marginLeft: 10,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <Text style={{ color: 'white', fontSize: 25 }}>SIGN UP</Text>
+        </View>
       </View>
     </View>
   )
 }
+
 export default App
