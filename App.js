@@ -1,38 +1,36 @@
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { View, Text } from 'react-native'
 
-const App = () => {
-  return (
-    <View style={{ flex: 1, flexDirection: 'row' }}>
-      <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center' }}>
-        <View style={{
-          width: 140,
-          height: 80,
-          backgroundColor: 'red',
-          borderRadius: 15,
-          marginRight: 10,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-          <Text style={{ color: 'white', fontSize: 25 }}>SIGN IN</Text>
-        </View>
-      </View>
+const ButtonCustom = ({ text, color }) => (
+  <View style={{
+    backgroundColor: color,
+    width: 250,
+    height: 100,
+    borderRadius: 10,
+    justifyContent: 'center',
+    marginBottom: 10,
+  }}>
+    <Text style={{
+      textAlign: 'center',
+      color: 'white',
+      fontSize: 30,
+      fontWeight: 'bold',
+    }}>
+      {text}
+    </Text>
+  </View>
+)
 
-      <View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'center' }}>
-        <View style={{
-          width: 140,
-          height: 80,
-          backgroundColor: 'blue',
-          borderRadius: 15,
-          marginLeft: 10,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-          <Text style={{ color: 'white', fontSize: 25 }}>SIGN UP</Text>
-        </View>
-      </View>
-    </View>
-  )
-}
+const App = () => (
+  <View style={{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }}>
+    <ButtonCustom text="Login" color="red" />
+    <ButtonCustom text="Logout" color="blue" />
+    <ButtonCustom text="Register" color="green" />
+  </View>
+)
 
 export default App
