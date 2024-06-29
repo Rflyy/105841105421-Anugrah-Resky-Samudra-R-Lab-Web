@@ -46,13 +46,23 @@ const App = () => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.title}>Forgot password</Text>
+        <Text style={styles.title}>Login</Text>
         <View style={styles.form}>
-          <Text style={{ fontSize: 13, textAlign: 'flex-end', marginBottom: 10, fontFamily: 'MetroMedium' }}>
-            Please, enter your email address. You will receive a link to create a new password via Email.
-          </Text>
           <TextInputCustom placeholder="Email" keyboardType="email-address" />
-          <ButtonCustom text="SEND" color="grey" />
+          <TextInputCustom placeholder="Password" keyboardType="default" />
+          <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginBottom: 10 }}>
+            <Text style={{ fontSize: 17, textAlign: 'center', fontFamily: 'MetroMedium' }}>Forgot your password?</Text>
+          </View>
+          <ButtonCustom text="LOGIN" color="grey" />
+        </View>
+      </View>
+      <Text style={{ fontSize: 16, textAlign: 'center', fontFamily: 'MetroMedium' }}>Continue with</Text>
+      <View style={styles.logoRow}>
+        <View style={styles.logoContainer}>
+          <Image source={require('./assets/google.png')} style={styles.logo} />
+        </View>
+        <View style={styles.logoContainer}>
+          <Image source={require('./assets/facebook.png')} style={styles.logo} />
         </View>
       </View>
     </View>
@@ -73,13 +83,29 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
   },
   title: {
-    fontSize: 32,
+    fontSize: 35,
     fontWeight: 'bold',
     marginBottom: 40,
-    fontFamily:'MetroBold'
+    fontFamily: 'MetroBold'
   },
   form: {
     width: '100%',
     alignItems: 'center',
+  },
+  logoRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 30,
+  },
+  logoContainer: {
+    backgroundColor: 'white',
+    borderRadius: 15,
+    padding: 5,
+    marginHorizontal: 10,
+  },
+  logo: {
+    width: 50,
+    height: 50,
   },
 });
