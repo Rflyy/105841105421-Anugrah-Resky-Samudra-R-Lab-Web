@@ -42,7 +42,7 @@ const TextInputCustom = ({ placeholder, keyboardType }) => {
   );
 };
 
-const App = () => {
+const App = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -51,7 +51,7 @@ const App = () => {
           <TextInputCustom placeholder="Email" keyboardType="email-address" />
           <TextInputCustom placeholder="Password" keyboardType="default" />
           <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginBottom: 10 }}>
-            <Text style={{ fontSize: 17, textAlign: 'center', fontFamily: 'MetroMedium' }}>Forgot your password?</Text>
+            <Text style={styles.ForgotPasswordtext} onPress={() => navigation.navigate('Forgot Password')}>Forgot your password?</Text>
           </View>
           <ButtonCustom text="LOGIN" color="grey" />
         </View>
@@ -108,4 +108,10 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
   },
+  ForgotPasswordtext: {
+    fontSize:15,
+    textAlign: 'flex-end',
+    marginLeft: '150',
+    fontFamily: 'MetroMedium',
+  }
 });

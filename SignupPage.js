@@ -16,7 +16,7 @@ const TextInputCustom = ({ placeholder, keyboardType }) => (
   />
 );
 
-const App = () => {
+const App = ({navigation}) => {
     const [dapatFont] = useFonts({
         'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
         'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf')
@@ -30,7 +30,7 @@ const App = () => {
           <TextInputCustom placeholder="Email" keyboardType="email-address" />
           <TextInputCustom placeholder="Password" keyboardType="default" />
           <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginBottom: 10}}>
-            <Text style={{ fontSize: 15, textAlign: 'flex-end', marginLeft: 170, fontFamily: 'MetroMedium'}}>Already have an account?</Text>
+            <Text style={styles.Logintext} onPress={() => navigation.navigate("Login")}>Already have an account?</Text>
           </View>
           <ButtonCustom text="SIGN UP" color="grey" />
         </View>
