@@ -8,7 +8,16 @@ import HomeAktif from './home-activated.png';
 import HomeInaktif from './home-inactive.png';
 import ShopAktif from './shop-activated.png';
 import ShopInaktif from './shop-inactive.png';
-
+import BagAktif from './bag-activated.png';
+import BagInaktif from './bag-inactive.png';
+import FavoriteAktif from './favorites-activated.png';
+import FavoriteInaktif from './favorites-inactive.png';
+import ProfileAktif from './profil-activated.png';
+import ProfileInaktif from './profil-inactive.png';
+import FavoritePage from './FavoritePage';
+import ShopPage from './ShopPage';
+import BagPage from './BagPage'
+import ProfilePage from './ProfilePage';
 
 const Tab = createBottomTabNavigator();
 function MyTabs() {
@@ -28,11 +37,47 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Shop"
-        component={LoginPage}
+        component={ShopPage}
         options={{
           headerShown: false, tabBarIcon: ({ focused }) => (
             <Image
               source={focused ? ShopAktif : ShopInaktif}
+              style={{ width: 40, height: 40 }}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Bag"
+        component={BagPage}
+        options={{
+          headerShown: false, tabBarIcon: ({ focused }) => (
+            <Image
+              source={focused ? BagAktif : BagInaktif}
+              style={{ width: 40, height: 40 }}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Favorite"
+        component={FavoritePage}
+        options={{
+          headerShown: false, tabBarIcon: ({ focused }) => (
+            <Image
+              source={focused ? FavoriteAktif : FavoriteInaktif}
+              style={{ width: 40, height: 40 }}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profil"
+        component={ProfilePage}
+        options={{
+          headerShown: false, tabBarIcon: ({ focused }) => (
+            <Image
+              source={focused ? ProfileAktif : ProfileInaktif}
               style={{ width: 40, height: 40 }}
             />
           ),
