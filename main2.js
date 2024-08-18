@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, ScrollVi
 
 class Home extends Component {
     render() {
-        const mainImage = require('./assets/lelleng.png');
+        const mainImage = require('./assets/Bule.jpg');
         const newImages = [
             { source: require('./assets/gambar1.png'), title: 'Evening Dress', subtitle: '10$' },
             { source: require('./assets/gambar2.png'), title: 'Sport Dress', subtitle: '12$' },

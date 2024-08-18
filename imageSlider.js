@@ -1,102 +1,79 @@
-import React, { Component } from 'react';
-import { SafeAreaView, View, Text, Image, StyleSheet, TouchableHighlight } from 'react-native';
-import ImageSlider from 'react-native-image-slider';
+import React from 'react';
+import { View, Text, Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
-class imageSlider extends Component {
-  render() {
-    const images = [
-        require('./assets/gambar1.png'),
-        require('./assets/gambar2.png'),
-        require('./assets/gambar3.png'),
-        require('./assets/gambar4.png'), 
-        require('./assets/gambar5.png'),
-        require('./assets/gambar6.png'),
-        require('./assets/gambar7.png'),
-        require('./assets/gambar8.png'),
-    ];
-
-    return (
-      <SafeAreaView style={styles.container}>
-        {/* <View style={styles.content1}>
-          <Text style={styles.contentText}>Content 1</Text>
-        </View> */}
-        <ImageSlider
-          loopBothSides
-          autoPlayWithInterval={3000}
-          images={images}
-          customSlide={({ index, item, style, width }) => (
-            <View key={index} style={[style, styles.customSlide]}>
-              <Image source={item} style={styles.customImage} />
-            </View>
-          )}
-          customButtons={(position, move) => (
-            <View style={styles.buttons}>
-              {images.map((image, index) => {
-                return (
-                  <TouchableHighlight
-                    key={index}
-                    underlayColor="#ccc"
-                    onPress={() => move(index)}
-                    style={styles.button}
-                  >
-                    <Text style={position === index && styles.buttonSelected}>
-                      {index + 1}
-                    </Text>
-                  </TouchableHighlight>
-                );
-              })}
-            </View>
-          )}
-        />
-        {/* <View style={styles.content2}>
-          <Text style={styles.contentText}>Content 2</Text>
-        </View> */}
-      </SafeAreaView>
-    );
-  }
+function HomeScreen() {
+  return (
+    <ScrollView style={styles.container}>
+      <View style={styles.header}>
+        <Image source={require('./assets/ireng.png')} style={styles.headerImage} />
+        <View style={styles.headerTextContainer}>
+          <Text style={styles.headerText}>Fashion sale</Text>
+          <TouchableOpacity style={styles.checkButton}>
+            <Text style={styles.checkButtonText}>Check</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View style={styles.newSection}>
+        <Text style={styles.newSectionTitle}>New</Text>
+        <Text style={styles.newSectionSubtitle}>You've never seen it before!</Text>
+        <ScrollView horizontal>
+          <Image source={require('./assets/gambar1.png')} style={styles.productImage} />
+          <Image source={require('./assets/gambar2.png')} style={styles.productImage} />
+          <Image source={require('./assets/gambar3.png')} style={styles.productImage} />
+        </ScrollView>
+      </View>
+    </ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-//   content1: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   content2: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-  contentText: {
-    fontSize: 20,
+  header: {
+    position: 'relative',
   },
-  customSlide: {
-    alignItems: 'center',
-    justifyContent: 'center',
+  headerImage: {
+    width: '90%',
+    height: 290,
   },
-  customImage: {
-    width: 300,
-    height: 500,
+  headerTextContainer: {
+    position: 'absolute',
+    bottom: 22,
+    left: 22,
   },
-  buttons: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 10,
-  },
-  button: {
-    margin: 3,
-    padding: 5,
-    borderRadius: 5,
-    backgroundColor: '#ddd',
-  },
-  buttonSelected: {
-    color: 'blue',
+  headerText: {
+    color: 'white',
+    fontSize: 35,
     fontWeight: 'bold',
+  },
+  checkButton: {
+    marginTop: 11,
+    backgroundColor: 'red',
+    paddingVertical: 11,
+    paddingHorizontal: 21,
+    borderRadius: 6,
+  },
+  checkButtonText: {
+    color: 'white',
+    fontSize: 15,
+  },
+  newSection: {
+    padding: 21,
+  },
+  newSectionTitle: {
+    fontSize: 25,
+    fontWeight: 'bold',
+  },
+  newSectionSubtitle: {
+    fontSize: 15,
+    color: 'gray',
+  },
+  productImage: {
+    width: 149,
+    height: 149,
+    marginRight: 11,
   },
 });
 
-export default imageSlider;
+export default HomeScreen;
